@@ -1,0 +1,457 @@
+$font: Open Sans, sans-serif;
+$animation: all 0.2s;
+
+$green: #80bf44;
+$blue: #1c63c4;
+$orange: #d76b1b;
+$pad: #f7f5f4;
+$grey: #a3a6ab;
+$violet: #cf213a;
+
+
+html, body {
+	font-family: $font;
+	padding: 0;
+	margin: 0;
+}
+
+.heading {text-align: center;}
+
+.leading {
+	padding: 80px 0;
+	background: url('../images/pattern.png');
+	background-size: 175px;
+
+	h1 {
+		color: #fff;
+		font-size: 60px;
+		font-weight: 700;
+		line-height: 60px;
+		margin: 0;
+	}
+
+	h2 {
+		color: rgba(0,0,0,.4);
+		font-size: 24px;
+		font-weight: 400;
+		margin: 12px 0 0 0;
+	}
+
+}
+
+.specialities {
+	margin-top: 60px;
+
+	h3 {
+		font-size: 24px;
+		font-weight: 400;
+		color: #000;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		padding: 12px 15px 15px 15px;
+		margin-left: -15px;
+		transition: $animation;
+
+		.title {
+			font-size: 18px;
+			color: $blue;
+			transition: $animation;
+		}
+
+		.profile {
+			margin-top: 4px;
+			font-size: 14px;
+			color: lighten(#000, 60%);
+		}
+
+		&:hover {
+			background-color: rgba($orange, .05);
+			border-radius: 6px;
+			.title {color: $orange;}
+		}
+
+	}
+}
+
+h2.title {
+	font-weight: bold;
+	font-size: 36px;
+	margin: 0;
+}
+
+h6.desk {
+	font-size: 14px;
+	font-weight: normal;
+	margin: 6px 0 0 0;
+}
+
+.map {
+	//background-color: $pad;
+	margin-top: 140px;
+
+	.tiles {
+		width: 1120px;
+		margin: 40px auto 0;
+	}
+
+	.top .tile {vertical-align: bottom;}
+
+	.bottom {
+		position: relative;
+		margin-top: 4px;
+		.tile {vertical-align: top;}
+	}
+
+	.double {
+		display: inline-block;
+		.tile {
+			display: block;
+			margin-bottom: 8px;
+		}
+	}
+
+	.tile {
+		display: inline-block;
+		margin: 2px;
+		position: relative;
+
+		.popover {
+			position: absolute;
+			background-color: #fff;
+			top: -20px;
+			left: -20px;
+			right: -20px;
+			box-shadow: 0 20px 40px rgba(0,0,0,.3);
+			z-index: 999;
+			border-radius: 4px;
+			display: none;
+
+			.stroked {
+				margin: 20px;
+				background: #fff;
+				padding: 10px 12px;
+				border-radius: 4px;
+
+				.address {
+					font-size: 11px;
+					opacity: .6;
+				}
+
+				.title {
+					font-size: 14px;
+				}
+
+				&.blue {
+					color: $blue;
+					border: 1px solid rgba($blue, .3);
+				}
+
+				&.orange {
+					color: $orange;
+					border: 1px solid rgba($orange, .3);
+				}
+
+				&.green {
+					color: $green;
+					border: 1px solid rgba($green, .3);
+				}
+
+				&.violet {
+					color: $violet;
+					border: 1px solid rgba($violet, .3);
+				}
+
+				&.grey {
+					color: $grey;
+					border: 1px solid rgba($grey, .3);
+				}
+
+				&:hover {background-color: #fff;}
+			}
+
+			img {
+				max-width: 100%;
+			}
+
+			.people {
+				margin: 10px 20px 16px 20px;
+				font-size: 11px;
+			}
+
+		}
+
+		.contents {
+			padding: 10px 12px;
+			border-radius: 4px;
+			color: #fff;
+			transition: $animation;
+
+			&:hover {cursor: pointer;}
+
+			.address {
+				font-size: 11px;
+				opacity: .6;
+			}
+
+			.title {
+				font-size: 14px;
+			}
+		}
+
+		.blue {
+			background-color: $blue;
+			&:hover {background-color: lighten($blue, 7%);}
+		}
+
+		.orange {
+			background-color: $orange;
+			&:hover {background-color: lighten($orange, 7%);}
+		}
+
+		.green {
+			background-color: $green;
+			&:hover {background-color: lighten($green, 7%);}
+		}
+
+		.violet {
+			background-color: $violet;
+			&:hover {background-color: lighten($violet, 7%);}
+		}
+
+		.grey {
+			padding: 9px 12px;
+			border: 1px solid lighten($grey, 20%);
+			color: $grey;
+			&:hover {border-color: $grey;}
+		}
+	}
+
+}
+
+.labs {
+	margin-top: 120px;
+
+	.nav {
+		text-align: center;
+		a {
+			font-size: 15px;
+			color: $blue;
+			text-decoration: none;
+			margin: 0 5px;
+			padding: 6px 10px;
+			border-radius: 3px;
+			cursor: pointer;
+			transition: $animation;
+
+			&:hover {
+				color: $orange;
+			}
+
+			&.active {
+				color: #898989;
+				background-color: $pad;
+				cursor: default;
+			}
+		}
+	}
+
+	.slider {
+		margin-top: 40px;
+		min-height: 500px;
+		color: #fff;
+		background-size: cover;
+		transition: background 0.3s linear;
+
+		.content {
+			background-image: -webkit-linear-gradient(top left, rgba(0,0,0,.9) 0%, rgba(0,0,0,.1) 50%);
+			min-height: 380px;
+			padding: 60px;
+		}
+
+		.address {
+			margin-top: 20px;
+			color: #fff;
+			border: 1px dashed #fff;
+			border-radius: 3px;
+			padding: 8px 12px;
+			opacity: .4;
+			display: inline-block;
+		}
+
+		p {
+			max-width: 500px;
+			line-height: 22px;
+		}
+
+		background: url('../images/slider/threed/1.jpg');
+		background-size: cover;
+	}
+
+}
+
+.staff {
+	margin-top: 120px;
+
+	.spoiler {
+		display: none;
+	}
+
+	.link {
+		margin-top: 30px;
+		text-align: center;
+	}
+
+	a {
+		font-size: 16px;
+		color: $blue;
+		border: 1px solid rgba($blue, .1);
+		border-radius: 3px;
+		padding: 6px 10px;
+		transition: $animation;
+		&:hover {
+			color: $orange;
+			cursor: pointer;
+			border-color: rgba($orange, .5);
+		}
+	}
+
+	.people {
+		margin-top: 20px;
+	}
+
+	.name {
+		margin-top: 6px;
+		font-size: 20px;
+	}
+
+	.status {
+		font-size: 14px;
+	}
+
+	.bio {
+		margin-top: 6px;
+		font-size: 14px;
+		color: lighten(#000, 60%);
+	}
+}
+
+.footer {
+	margin: 100px auto;
+
+	p {
+		margin: 0;
+		font-size: 14px;
+		color: lighten(#000, 60%);
+	}
+
+	a {
+		color: $blue;
+		text-decoration: none;
+		transition: $animation;
+		&:hover {color: $orange;}
+	}
+}
+
+@media (max-width: 1200px) {
+	.map {
+		margin-top: 70px;
+		.tile .popover .title {font-size: 11px !important;}
+		.tile .contents .title {font-size: 11px;}
+		.tiles {width: 940px;}
+	}
+	.labs {margin-top: 40px;}
+	.staff {margin-top: 60px;}
+}
+
+@media (max-width: 940px) {
+	.map {display: none;}
+	.labs {margin-top: 50px;}
+	.staff {margin-top: 50px;}
+}
+
+@media (max-width: 750px) {
+	.leading {
+		h1 {font-size: 50px; line-height: 50px;}
+		h2 {font-size: 20px;}
+	}
+	.specialities {
+		h3 {font-size: 18px !important;}
+		a {
+			.title {font-size: 14px !important;}
+			.profile {font-size: 12px !important;}
+		}
+	}
+	.labs {
+		.nav span {display: none;}
+	}
+	.staff {
+		margin-top: 50px;
+		.name {
+			font-size: 16px;
+			font-weight: 600;
+		}
+		.status {
+			font-size: 13px;
+		}
+		.bio {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.leading {
+		padding: 40px 0;
+		h1 {font-size: 36px; line-height: 36px;}
+		h2 {font-size: 16px;}
+	}
+	.specialities {
+		margin-top: 0;
+		.column {margin-top: 50px;}
+		h3 {font-size: 24px !important;}
+		a .title {font-size: 18px !important;}
+		a .profile {font-size: 14px !important;}
+	}
+	.heading {
+		text-align: left;
+		h2 {font-size: 24px;}
+		margin-bottom: 20px;
+	}
+	.labs {
+		.content {padding: 40px !important;}
+		h2 {font-size: 24px;}
+		p {font-size: 14px;}
+	}
+	.staff .people {
+		margin-top: 0 !important;
+
+		.name {
+			font-size: 20px;
+			font-weight: normal;
+		}
+		.status {
+			font-size: 14px;
+		}
+		.bio {
+			display: block;
+		}
+	}
+	.link {text-align: left !important;}
+	.footer {
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 400px) {
+	.labs {
+		.nav a {
+			font-size: 13px;
+		}
+		.slider {margin-top: 30px;}
+	}
+}
