@@ -1,10 +1,30 @@
 [
     {
-        "name": "",
-        "title": "",
-        "short_title": "",
-        "text": "",
-        "photos": ["1.jpg", "2.jpg", "3.jpg"],
-        "room": ""
+        "name": "threed",
+        "short_title": "3D<span>-прототипирование</span>",
+        "title": "Лаборатория 3D-прототипирования",
+        "text": "РЫБА_РЫБА_РЫБА",
+        "room": "112 б"
+    },
+    {
+        "name": "tech",
+        "short_title": "Встраиваемая<span> техника</span>",
+        "title": "Лаборатория встраиваемой техники",
+        "text": "РЫБА_РЫБА_РЫБА",
+        "room": "117 а"
+    },
+    {
+        "name": "asu",
+        "short_title": "АСУ ТП",
+        "title": "Лаборатория АСУ ТП",
+        "text": "РЫБА_РЫБА_РЫБА",
+        "room": "113 а"
+    },
+    {
+        "name": "cals",
+        "short_title": "CALS<span>-центр</span>",
+        "title": "CALS-центр",
+        "text": "РЫБА_РЫБА_РЫБА",
+        "room": "113 б"
     }
 ]

@@ -2,6 +2,17 @@
     "counts_line": "",
     "profs": [
         {
+            "name": "Михаил",
+            "second_name": "Сергеевич",
+            "last_name": "Суходоев",
+            "degree": "Кандидат технических наук ",
+            "url": "http://portal.tpu.ru/SHARED/s/SMIKE",
+            "interests": "Системы автоматического управления",
+            "room": "111",
+            "rank": "phd",
+            "visible": 1
+        },
+        {
             "name": "Игорь",
             "second_name": "Петрович",
             "last_name": "Скирневский",
