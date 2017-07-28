@@ -1,0 +1,16 @@
+{
+    "counts_line": "",
+    "profs": [
+        {
+            "name": "Игорь",
+            "second_name": "Петрович",
+            "last_name": "Скирневский",
+            "degree": "Ассистент",
+            "url": "http://portal.tpu.ru/SHARED/s/SKIRNEVSKIY",
+            "interests": "Системы автоматической сегментации изображений",
+            "room": "112a",
+            "rank": "assistant",
+            "visible": 1
+        }
+    ]
+}
