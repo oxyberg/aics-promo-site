@@ -107,6 +107,7 @@
 		</div>
 		<div class="tiles">
 			<div class="top">
+
 				<div class="tile" data-address="116a">
 					<div class="popover">
 						<div class="stroked blue">
@@ -114,13 +115,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('116a') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents blue">
 						<div class="address">116 а</div>
 						<div class="title">Учебная <br>аудитория</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="116b">
 					<div class="popover">
 						<div class="stroked orange">
@@ -128,13 +134,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('116b') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents orange">
 						<div class="address">116 б</div>
 						<div class="title">Преподавательская</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="114">
 					<div class="popover">
 						<div class="stroked orange">
@@ -142,13 +153,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('114') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents orange">
 						<div class="address">114</div>
 						<div class="title">Преподавательская</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="113a">
 					<div class="popover">
 						<div class="stroked green">
@@ -156,13 +172,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('113a') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents green">
 						<div class="address">113 а</div>
 						<div class="title">Лаборатория АСУ ТП. <br>Учебная аудитория</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="113b">
 					<div class="popover">
 						<div class="stroked green">
@@ -170,13 +191,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('113b') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents green">
 						<div class="address">113 б</div>
 						<div class="title">CALS-центр</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="podval">
 					<div class="popover">
 						<div class="stroked grey">
@@ -184,13 +210,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('podval') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents grey">
 						<div class="address">подвал</div>
 						<div class="title">Лаборатория АСУ ТП</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="103">
 					<div class="popover">
 						<div class="stroked orange">
@@ -198,7 +229,11 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('103') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents orange">
 						<div class="address">103</div>
@@ -206,6 +241,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="bottom">
 				<div class="tile" data-address="117b">
 					<div class="popover">
@@ -214,13 +250,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('117b') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents blue">
 						<div class="address">117 б</div>
 						<div class="title">Учебная <br>аудитория</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="117a">
 					<div class="popover">
 						<div class="stroked green">
@@ -228,13 +269,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('117a') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents green">
 						<div class="address">117 а</div>
 						<div class="title">Лаборатория <br>встраиваемой <br>техники</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="115a">
 					<div class="popover">
 						<div class="stroked orange">
@@ -242,13 +288,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('115a') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents orange">
 						<div class="address">115 а</div>
 						<div class="title">Преподавательская</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="112b">
 					<div class="popover">
 						<div class="stroked green">
@@ -256,13 +307,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('112b') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents green">
 						<div class="address">112 б</div>
 						<div class="title">Лаборатория <br>3D-прототипирования. <br>Преподавательская</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="112a">
 					<div class="popover">
 						<div class="stroked orange">
@@ -270,13 +326,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('112a') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents orange">
 						<div class="address">112 а</div>
 						<div class="title">Преподавательская</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="111">
 					<div class="popover">
 						<div class="stroked violet">
@@ -284,14 +345,20 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('111') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents violet">
 						<div class="address">111</div>
 						<div class="title">Завкафедры <br>А. С. Фадеев</div>
 					</div>
 				</div>
+
 				<div class="double">
+
 					<div class="tile" data-address="109">
 						<div class="popover">
 						<div class="stroked blue">
@@ -299,13 +366,18 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('109') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 						<div class="contents blue">
 							<div class="address">109</div>
 							<div class="title">Аудитория</div>
 						</div>
 					</div>
+
 					<div class="tile" data-address="108">
 						<div class="popover">
 						<div class="stroked blue">
@@ -313,7 +385,11 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('108') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 						<div class="contents blue">
 							<div class="address">108</div>
@@ -321,6 +397,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="tile" data-address="107">
 					<div class="popover">
 						<div class="stroked blue">
@@ -328,7 +405,11 @@
 							<div class="title"></div>
 						</div>
 						<img>
-						<div class="people">Скирневский И. П.<br>Савенко И. И.</div>
+                        <div class="people">
+                            <? foreach (ORM::getProfsByRoom('107') as $prof): ?>
+                                <?=getShrinkedName($prof)?><br />
+                            <? endforeach; ?>
+                        </div>
 					</div>
 					<div class="contents blue">
 						<div class="address">107</div>

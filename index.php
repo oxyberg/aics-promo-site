@@ -6,75 +6,22 @@ define('PATH_TO_META', PATH_TO_DB . '/meta.json');
 define('PATH_TO_PROFS', PATH_TO_DB . '/profs.json');
 define('PATH_TO_SLIDER', PATH_TO_DB . '/slider.json');
 
+mb_internal_encoding('UTF-8');
+
 if (DEBUG)
 {
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
 }
 
-function dd($var)
-{
-    echo '<pre>';
-    print_r($var);
-    echo '</pre>';
-    die;
-}
+require 'helpers.php';
+require 'db.php';
+require 'orm.php';
 
-class ORM
-{
-
-    public static function getAllProfs($showInvisible = false)
-    {
-        $file = file_get_contents(PATH_TO_PROFS);
-        $all = json_decode($file, true)['profs'];
-        if ($showInvisible == false)
-        {
-            $i = 0;
-            foreach ($all as $prof)
-            {
-                if ($prof['visible'] == 0)
-                {
-                    unset($all[$i]);
-                    $i--;
-                }
-                $i++;
-            }
-        }
-        return $all;
-    }
-
-    public static function getProfsByRoom($room, $showInvisible = false)
-    {
-        $all = self::getAllProfs();
-        $result = [];
-        foreach ($all as $prof)
-        {
-            if (($prof['room'] == $room) && ($showInvisible || $prof['visible'] == 1))
-            {
-                $result[] = $prof;
-            }
-        }
-        return $result;
-    }
-
-    public static function getProfCount()
-    {
-        $file = file_get_contents(PATH_TO_PROFS);
-        $all = json_decode($file, true);
-        return $all['counts_line'];
-    }
-
-    public static function getAllSlides()
-    {
-        $file = file_get_contents(PATH_TO_SLIDER);
-        return json_decode($file, true);
-    }
-
-    public static function getMeta()
-    {
-        $file = file_get_contents(PATH_TO_META);
-        return json_decode($file, true);
-    }
-}
+DB::load([
+    'meta' => PATH_TO_META,
+    'slider' => PATH_TO_SLIDER,
+    'profs' => PATH_TO_PROFS,
+]);
 
 require 'template.php';
