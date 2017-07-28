@@ -208,22 +208,29 @@ h6.desk {
   .staff .link {
     margin-top: 30px;
     text-align: center; }
-  .staff a {
-    font-size: 16px;
-    color: #1c63c4;
-    border: 1px solid rgba(28, 99, 196, 0.1);
-    border-radius: 3px;
-    padding: 6px 10px;
-    transition: all 0.2s; }
-    .staff a:hover {
-      color: #d76b1b;
-      cursor: pointer;
-      border-color: rgba(215, 107, 27, 0.5); }
+    .staff .link a {
+      font-size: 16px;
+      color: #1c63c4;
+      border: 1px solid rgba(28, 99, 196, 0.1);
+      border-radius: 3px;
+      padding: 6px 10px;
+      transition: all 0.2s; }
+      .staff .link a:hover {
+        color: #d76b1b;
+        cursor: pointer;
+        border-color: rgba(215, 107, 27, 0.5); }
   .staff .people {
     margin-top: 20px; }
   .staff .name {
     margin-top: 6px;
     font-size: 20px; }
+    .staff .name a {
+      color: #1c63c4;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s; }
+      .staff .name a:hover {
+        color: #d76b1b; }
   .staff .status {
     font-size: 14px; }
   .staff .bio {

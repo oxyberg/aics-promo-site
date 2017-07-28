@@ -79,37 +79,20 @@
 		<div class="container">
 
 			<div class="nav">
-				<a class="active" data-name="threed">3D<span>-прототипирование</span></a>
-				<a data-name="tech">Встраиваемая<span> техника</span></a>
-				<a data-name="asu">АСУ ТП</a>
-				<a data-name="cals">CALS<span>-центр</span></a>
+                <? $i = 0; foreach (ORM::getAllSlides() as $slide): ?>
+				<a<? if ($i == 0) echo ' class="active"'; ?> data-name="<?=$slide['name']?>"><?=$slide['short_title']?></a>
+                <? $i++; endforeach; ?>
 			</div>
 
 			<div class="slider">
 
-				<div class="content" id="threed">
-					<h2 class="title">Лаборатория 3D-прототипирования</h2>
-					<p>В прошлые выходные был в Берлине. Сходил в Трезор и Бергхайн — два суперкультовых техноклуба. То есть Трезор был культовым, а Бергхайн остаётся. В обоих клубах два танцпола — основной-жёсткий и второстепенный-полегче, при этом основной называется как сам клуб, а второй — как-то ещё. В Трезоре есть «Трезор» и «Глобус», в Бергхайне — «Бергхайн» и «Панорамабар».</p>
-					<span class="address">аудитория 112 б</span>
+                <? foreach (ORM::getAllSlides() as $slide): ?>
+				<div class="content" id="<?=$slide['name']?>">
+					<h2 class="title"><?=$slide['title']?></h2>
+					<p><?=$slide['text']?></p>
+					<span class="address">аудитория <?=$slide['room']?></span>
 				</div>
-
-				<div class="content" id="tech">
-					<h2 class="title">Лаборатория встраиваемой техники</h2>
-					<p>ФБР и Министерство юстиции США пытаются заставить Эпл сделать для них версию Ай-ОСа, которая не будет ограничивать количество попыток при переборе пароля. Это позволит ФБР легко получать доступ к большинству телефонов, потому что подавляющее большинство людей используют четырёхцифренные пароли. ФБР говорит.</p>
-					<span class="address">аудитория 117 а</span>
-				</div>
-
-				<div class="content" id="asu">
-					<h2 class="title">Лаборатория АСУ ТП</h2>
-					<p>Надо понимать, что американский уровень зомбирования граждан государством выше нашего, и в среднем там даже очень образованные люди уверены, что государство защищает их свободы и ценности. Именно потому Эпл сейчас выступает во всей возможной прессе с очень длинными и занудными объяснениями того.</p>
-					<span class="address">аудитория 113 а</span>
-				</div>
-
-				<div class="content" id="cals">
-					<h2 class="title">CALS-центр</h2>
-					<p>Министерство юстиции США уже вконец охренело и в открытую шантажирует Эпл тем, что отберёт у них исходники Ай-ОСа и напишет нужный им софт самостоятельно, раз те не хотят по-хорошему.</p>
-					<span class="address">аудитория 113 б</span>
-				</div>
+                <? endforeach; ?>
 
 			</div>
 
@@ -361,220 +344,46 @@
 
 		<div class="container heading">
 			<h2 class="title">Преподаватели кафедры</h2>
-			<h6 class="desk">4 доцента, 5 старших преподавателей и 7 ассистентов</h6>
+			<h6 class="desk"><?=ORM::getProfCount()?></h6>
 		</div>
 
 		<div class="container people" style="margin-top:40px">
 
+            <? $i = 0; foreach (ORM::getAllProfs() as $prof): if ($prof['rank'] == 'phd'): ?>
 			<div class="three columns">
-				<div class="name">Александр Фадеев</div>
-				<div class="status">Заведующий кафедрой. Кандидат технических наук </div>
-				<p class="bio">Arduino, Raspberry Pi, датчики, умные дома</p>
+				<div class="name"><a class="portal_link" href="<?=$prof['url']?>"><?=$prof['name']?> <?=$prof['second_name']?></a></div>
+				<div class="status"><?=$prof['degree']?></div>
+				<p class="bio"><?=$prof['interests']?></p>
 			</div>
+            <? $i++; ?>
 
-			<div class="three columns">
-				<div class="name">Валерий Аврамчук</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Восстановление информации с носителей</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Анна Вичугова</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Анализ, проектирование и внедрение информационных систем</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Алексей Пономарев</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Облака, Big Data, мобильные приложения</p>
-			</div>
-
+            <? if ($i % 4 == 0): ?>
 		</div>
-
 		<div class="container people">
+            <? endif; endif; ?>
 
-			<div class="three columns">
-				<div class="name">Сергей Гайворонский</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-			</div>
+            <? endforeach; ?>
+        </div>
 
-			<div class="three columns">
-				<div class="name">Сергей Замятин</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Виктор Коновалов</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Максим Пушкарев</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Анализ и синтез стационарных и интервальных систем управления</p>
-			</div>
-
-		</div>
-
-		<div class="container people">
-
-			<div class="three columns">
-				<div class="name">Анатолий Кориков</div>
-				<div class="status">Профессор. Доктор технических наук</div>
-				<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Елена Кочегурова</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Обработка измерительной информации в реальном масштабе времени</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Василий Курганов</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Средства и способы измерения расходов</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Елена Лунева</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Визуализация данных</p>
-			</div>
-
-		</div>
-
-		<div class="container people">
-
-			<div class="three columns">
-				<div class="name">Максим Скороспешкин</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Микропроцессорный контроллер Siemens LOGO</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Михаил Суходоев</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Arduino</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Геннадий Цапко</div>
-				<div class="status">Профессор. Доктор технических наук</div>
-				<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Ирина Цапко</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Обработка изображений и видео</p>
-			</div>
-
-		</div>
-
-		<div class="container people">
-
-			<div class="three columns">
-				<div class="name">Владимир Скороспешкин</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Сергей Цапко</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Моделирование динамических квазиинвариантных систем</p>
-			</div>
-
-			<div class="three columns">
-				<div class="name">Елена Яковлева</div>
-				<div class="status">Доцент. Кандидат технических наук</div>
-				<p class="bio">Теория автоматического управления</p>
-			</div>
-
-			<div class="three columns">
-					<div class="name">Виктор Казьмин</div>
-					<div class="status">Доцент. Кандидат технических наук</div>
-					<p class="bio">Микропроцессорные системы управления двигателями внутреннего сгорания</p>
-				</div>
-
-		</div>
 
 		<div class="spoiler">
 
 			<div class="container people">
 
-				<div class="three columns">
-					<div class="name">Александр Ефремов</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Моделирование систем</p>
-				</div>
+                <? $i = 0; foreach (ORM::getAllProfs() as $prof): if ($prof['rank'] == 'assistant'): ?>
+    			<div class="three columns">
+    				<div class="name"><a class="portal_link" href="<?=$prof['url']?>"><?=$prof['name']?> <?=$prof['second_name']?></a></div>
+    				<div class="status"><?=$prof['degree']?></div>
+    				<p class="bio"><?=$prof['interests']?></p>
+    			</div>
+                <? $i++; ?>
 
-				<div class="three columns">
-					<div class="name">Игорь Савенко</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Интернет технологии (фронтенд, бэкенд, базы данных)</p>
-				</div>
+                <? if ($i % 4 == 0): ?>
+    		</div>
+    		<div class="container people">
+                <? endif; endif; ?>
 
-				<div class="three columns">
-					<div class="name">Игорь Скирневский</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Обработка изображений, разработка настольного ПО</p>
-				</div>
-
-				<div class="three columns">
-					<div class="name">Виктор Горностаев</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-				</div>
-
-			</div>
-
-			<div class="container people">
-
-				<div class="three columns">
-					<div class="name">Ярослав Мартынов</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Разработка программного обеспечения (.NET, C#, ASP.NET)</p>
-				</div>
-
-				<div class="three columns">
-					<div class="name">Геннадий Паньшин</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Arduino и 3D-печать</p>
-				</div>
-
-				<div class="three columns">
-					<div class="name">Вадим Погребной</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-				</div>
-
-				<div class="three columns">
-					<div class="name">Семён Ефимов</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-				</div>
-
-			</div>
-
-			<div class="container people">
-
-				<div class="three columns">
-					<div class="name">Эвелина Аметова</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Увлекается дайвингом, вёрсткой и теннисом</p>
-				</div>
-
-				<div class="three columns">
-					<div class="name">Павел Банокин</div>
-					<div class="status">Ассистент</div>
-					<p class="bio">Анализ поведения пользователей программного обеспечения</p>
-				</div>
+                <? endforeach; ?>
 
 			</div>
 
@@ -595,7 +404,7 @@
 		</div>
 		<p style="margin-top:20px">Кафедра автоматики и компьютерных систем</p>
 		<p>10 корпус ТПУ, проспект Ленина 2</p>
-		<p><a href="mailto:m@aics.ru">m@aics.ru</a></p>
+		<p><a href="mailto:<?=ORM::getMeta()['email']?>"><?=ORM::getMeta()['email']?></a></p>
 	</div>
 
 </body>
