@@ -353,7 +353,7 @@
 					</div>
 					<div class="contents violet">
 						<div class="address">111</div>
-						<div class="title">Завкафедры <br>А. С. Фадеев</div>
+						<div class="title">Завкафедры</div>
 					</div>
 				</div>
 
@@ -432,7 +432,7 @@
 
             <? $i = 0; foreach (ORM::getAllProfs() as $prof): if ($prof['rank'] == 'phd'): ?>
 			<div class="three columns">
-				<div class="name"><a class="portal_link" href="<?=$prof['url']?>"><?=$prof['name']?> <?=$prof['second_name']?></a></div>
+				<div class="name"><a class="portal_link" href="<?=$prof['url']?>"><?=$prof['name']?> <?=$prof['last_name']?></a></div>
 				<div class="status"><?=$prof['degree']?></div>
 				<p class="bio"><?=$prof['interests']?></p>
 			</div>
@@ -453,7 +453,7 @@
 
                 <? $i = 0; foreach (ORM::getAllProfs() as $prof): if ($prof['rank'] == 'assistant'): ?>
     			<div class="three columns">
-    				<div class="name"><a class="portal_link" href="<?=$prof['url']?>"><?=$prof['name']?> <?=$prof['second_name']?></a></div>
+    				<div class="name"><a class="portal_link" href="<?=$prof['url']?>"><?=$prof['name']?> <?=$prof['last_name']?></a></div>
     				<div class="status"><?=$prof['degree']?></div>
     				<p class="bio"><?=$prof['interests']?></p>
     			</div>
